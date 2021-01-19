@@ -14,7 +14,7 @@ let result;
 
 switch (operator) {
   case '+':
-    result = operand1 + operand2;
+    result = Number(operand1) + Number(operand2);
     break;
   default:
     console.error('Not implemented:', operator);
