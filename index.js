@@ -16,6 +16,15 @@ switch (operator) {
   case '+':
     result = Number(operand1) + Number(operand2);
     break;
+  case '-':
+    result = Number(operand1) - Number(operand2);
+    break;
+  case'*':
+    result = Number(operand1) * Number(operand2);
+    break;
+  case '/':
+    result = Number(operand1) / Number(operand2);
+    break;
   default:
     console.error('Not implemented:', operator);
 }
