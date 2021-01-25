@@ -17,18 +17,34 @@ for(let i = 0; i < arguments.length; i++){
   if (i % 2 == 0){
 
   }else{
-    console.log(i);
     operand.push(arguments[i]);
   }
 
   if(i==0){
-    console.log(i);
     operand.push(arguments[i]);
   }
 }
 
-console.log(operand);
-console.log(operator);
+if(arguments == 0){
+  console.log('Supported operators:\n\r +, -, *, /');
+  console.log();
+  console.log('Usage example:\n\r 5 5 + 9 *');
+}
+
+if(operator == 0){
+  console.log("No valid operator!");
+  console.log('Supported operators:\n\r +, -, *, /');
+  console.log();
+  console.log('Usage example:\n\r 5 5 + 9 *');
+}
+
+if(operand.length == operator.length){
+  console.log('Too many operators passed!');
+}
+
+if(operand.length > operator.length+1){
+  console.log('Too less operators passed!');
+}
 
 /*if(operator === undefined || operand1 === undefined || operand2 === undefined){
   console.error('Usage eg: 5 5 +');
@@ -67,6 +83,9 @@ function CalcExe(){
         result = result * Number(operand.shift());
       } else if (tempOp === '/') {
         result = result / Number(operand.shift());
+      }else {
+        console.log('Operator not supported!');
+        console.log('Supported operators:\n\r +, -, *, /');
       }
     }else{
       if (tempOp === '+') {
@@ -77,12 +96,16 @@ function CalcExe(){
         result = Number(operand.shift()) * Number(operand.shift());
       } else if (tempOp === '/') {
         result = Number(operand.shift()) / Number(operand.shift());
+      }else {
+        console.log('Operator not supported!');
+        console.log('Supported operators:\n\r +, -, *, /');
       }
     }
   }
 
-
-  console.log(result);
+  if(result != null){
+    console.log(result);
+  }
 }
 
 CalcExe();
