@@ -4,15 +4,39 @@
 
 let arguments = process.argv.slice(2);
 
-let operand1 = arguments[0];
-let operand2 = arguments[1];
-let operator = arguments[2];
+let operator = [];
+let operand = [];
 
-console.log('Calculating:', operand1, operand2, operator);
+for (let k = 2; k < arguments.length; k++) {
+  if (k % 2 == 0) {
+    operator.push(arguments[k]);
+  }
+}
+
+for(let i = 0; i < arguments.length; i++){
+  if (i % 2 == 0){
+
+  }else{
+    console.log(i);
+    operand.push(arguments[i]);
+  }
+
+  if(i==0){
+    console.log(i);
+    operand.push(arguments[i]);
+  }
+}
+
+console.log(operand);
+console.log(operator);
+
+/*if(operator === undefined || operand1 === undefined || operand2 === undefined){
+  console.error('Usage eg: 5 5 +');
+}*/
 
 let result;
 
-switch (operator) {
+/*switch (operator.shift()) {
   case '+':
     result = Number(operand1) + Number(operand2);
     break;
@@ -27,6 +51,39 @@ switch (operator) {
     break;
   default:
     console.error('Not implemented:', operator);
+}*/
+
+function CalcExe(){
+  while (operator.length > 0){
+    let tempOp = operator.shift();
+
+    if(result != null){
+      if (tempOp === '+') {
+        let temp = Number(operand.shift());
+        result = (result+temp);
+      } else if (tempOp === '-') {
+        result = result - Number(operand.shift());
+      } else if (tempOp === '*') {
+        result = result * Number(operand.shift());
+      } else if (tempOp === '/') {
+        result = result / Number(operand.shift());
+      }
+    }else{
+      if (tempOp === '+') {
+        result = Number(operand.shift()) + Number(operand.shift());
+      } else if (tempOp === '-') {
+        result = Number(operand.shift()) - Number(operand.shift());
+      } else if (tempOp === '*') {
+        result = Number(operand.shift()) * Number(operand.shift());
+      } else if (tempOp === '/') {
+        result = Number(operand.shift()) / Number(operand.shift());
+      }
+    }
+  }
+
+
+  console.log(result);
 }
 
-console.log(result);
+CalcExe();
+
