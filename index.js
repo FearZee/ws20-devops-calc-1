@@ -8,13 +8,13 @@ let operator = [];
 let operand = [];
 
 for (let k = 2; k < arguments.length; k++) {
-  if (k % 2 == 0) {
+  if (k % 2 === 0) {
     operator.push(arguments[k]);
   }
 }
 
 for(let i = 0; i < arguments.length; i++){
-  if (i % 2 == 0){
+  if (i % 2 === 0){
 
   }else{
     operand.push(arguments[i]);
@@ -25,20 +25,20 @@ for(let i = 0; i < arguments.length; i++){
   }
 }
 
-if(arguments == 0){
-  console.log('Supported operators:\n\r +, -, *, /');
+if(arguments === 0){
+  console.log('Supported operators:\n +, -, *, /');
   console.log();
-  console.log('Usage example:\n\r 5 5 + 9 *');
+  console.log('Usage example:\n 5 5 + 9 *');
 }
 
-if(operator == 0){
+if(operator === 0){
   console.log("No valid operator!");
-  console.log('Supported operators:\n\r +, -, *, /');
+  console.log('Supported operators:\n +, -, *, /');
   console.log();
-  console.log('Usage example:\n\r 5 5 + 9 *');
+  console.log('Usage example:\n 5 5 + 9 *');
 }
 
-if(operand.length == operator.length){
+if(operand.length === operator.length){
   console.log('Too many operators passed!');
 }
 
